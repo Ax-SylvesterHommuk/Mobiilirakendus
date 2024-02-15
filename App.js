@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import {SafeAreaView} from "react-native";
+import { SafeAreaView } from "react-native";
 import { GoogleSignin } from "@react-native-google-signin/google-signin"
 import Splash from "./src/screens/auth/Splash";
 import Signup from "./src/screens/auth/Signup";
