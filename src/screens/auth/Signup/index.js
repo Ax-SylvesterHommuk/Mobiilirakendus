@@ -11,6 +11,14 @@ import { styles } from "./styles";
 const Signup = () => {
     const [checked, setChecked] = useState(false);
 
+    const onBack = () => {
+        navigation.goBack()
+    }
+
+    const onSignin = () => {
+        navigation.navigate('Signin')
+    }
+
     return (
         <View style={styles.container}>
             <AuthHeader title="Sign Up" />
@@ -24,6 +32,9 @@ const Signup = () => {
             <Button style={styles.button} title="Sign In" />
             <Separator text="Or sign up with" />
             <GoogleLogin />
+            <Text style={styles.footerText}>Already have an account?   
+                <Text onPress={onSignin} style={styles.footerLink}> Sign In</Text>
+            </Text>
         </View>
     );
 };
