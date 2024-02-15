@@ -8,7 +8,7 @@ import Separator from "../../../components/Separator";
 import GoogleLogin from "../../../components/GoogleLogin";
 import { styles } from "./styles";
 
-const Signup = () => {
+const Signup = ({navigation}) => {
     const [checked, setChecked] = useState(false);
 
     const onBack = () => {
@@ -33,7 +33,7 @@ const Signup = () => {
             <Separator text="Or sign up with" />
             <GoogleLogin />
             <Text style={styles.footerText}>Already have an account?   
-                <Text onPress={onSignin} style={styles.footerLink}> Sign In</Text>
+                <Text style={styles.footerLink}> Sign In</Text>
             </Text>
         </View>
     );
