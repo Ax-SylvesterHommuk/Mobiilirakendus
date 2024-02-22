@@ -26,7 +26,7 @@ const Tabs = () => {
       <Tab.Navigator screenOptions={({ route }) => ({
         tabBarIcon: ({ focused, color, size }) => {
           let icon;
-  
+
           if (route.name === 'Home') {
             icon = focused
               ? require('./src/assets/tabs/home_active.png')
@@ -40,7 +40,7 @@ const Tabs = () => {
               ? require('./src/assets/tabs/profile_active.png')
               : require('./src/assets/tabs/profile.png');
           }
-  
+
           return <Image style={{ width: 24, height: 24 }} source={icon} />;
         },
         headerShown: false,
@@ -91,7 +91,7 @@ const Tabs = () => {
             }
           </Stack.Navigator>
         </NavigationContainer>
-      </SafeAreaProvider>
+    </SafeAreaProvider>
     );
   };
   
