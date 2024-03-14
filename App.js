@@ -7,6 +7,8 @@ import Home from './src/screens/app/Home';
 import Favorites from './src/screens/app/Favorites';
 import Profile from './src/screens/app/Profile';
 import ProductDetails from "./src/screens/app/ProductDetails";
+import Settings from './src/screens/app/Settings';
+import CreateListing from './src/screens/app/CreateListing';
 import { GoogleSignin } from "@react-native-google-signin/google-signin";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -21,6 +23,16 @@ const Tab = createBottomTabNavigator();
 const WEB_CLIENT_ID = "577679857097-di31grlciim1065t7n9es9qruqvpok2o.apps.googleusercontent.com";
 const IOS_CLIENT_ID = "577679857097-r0pjf1oml130g57o2dk22tqsei01kqnh.apps.googleusercontent.com"
 const REVERSED_CLIENT_ID = "com.googleusercontent.apps.577679857097-r0pjf1oml130g57o2dk22tqsei01kqnh"
+
+const ProfileStack = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="Profile" component={Profile} options={{headerShown: false}} />
+      <Stack.Screen name="Settings" component={Settings} options={{headerShown: false}} />
+      <Stack.Screen name="CreateListing" component={CreateListing} options={{headerShown: false}} />
+    </Stack.Navigator>
+  );
+};
 
 const Tabs = () => {
     return (
@@ -50,7 +62,7 @@ const Tabs = () => {
       })}>
         <Tab.Screen name="Home" component={Home} />
         <Tab.Screen name="Favorites" component={Favorites} />
-        <Tab.Screen name="Profile" component={Profile} />
+        <Tab.Screen name="Profile" component={ProfileStack} />
       </Tab.Navigator>
     );
   }
